@@ -36,6 +36,10 @@ func (s *Extension) Destroy(app *nibbler.Application) error {
 	return s.server.Close()
 }
 
+func (s *Extension) GetName() string {
+	return "socket.io"
+}
+
 type fnEventMessageHandler func(s socketio.Conn, msg string) string
 type fnEventMessageHandlerVoid func(s socketio.Conn, msg string)
 type fnEventWithErrorHandler func(s socketio.Conn) error
